@@ -6,16 +6,18 @@
 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/outputs.h>
 
 / {
     keymap {
         compatible = "zmk,keymap";
 
+        // Default layer - scanner has no physical keys
         default_layer {
-            // Scanner device with minimal input - use none for display-only device
-            bindings = <
-                &none  // No key action needed for scanner
-            >;
+            bindings = <&none>;
         };
     };
 };
+
+// Touch input - direct CST816S handling for raw coordinate debugging
